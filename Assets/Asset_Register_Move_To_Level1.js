@@ -119,11 +119,11 @@ test("Asset Register - Move To Level 1", function(target, app){
      //Wait for 3 seconds
      delay(3);
      
-     window.elements()[49].pickers()[0].wheels()[0].selectValue(inputDate[0]);
-     window.elements()[49].pickers()[0].wheels()[1].selectValue(inputDate[1]);
-     window.elements()[49].pickers()[0].wheels()[2].selectValue(inputDate[2]);
+     window.elements()[55].pickers()[0].wheels()[0].selectValue(inputDate[0]);
+     window.elements()[55].pickers()[0].wheels()[1].selectValue(inputDate[1]);
+     window.elements()[55].pickers()[0].wheels()[2].selectValue(inputDate[2]);
      
-     window.elements()[49].toolbar().buttons()["Done"].tap();
+     window.elements()[55].toolbar().buttons()["Done"].tap();
 
      //Wait for 3 seconds
      delay(3);
@@ -152,7 +152,8 @@ test("Asset Register - Move To Level 1", function(target, app){
      delay(3);
      
      // Reopen Asset Register
-     window.buttons()["Assets"].tap();     
+     //window.buttons()["Assets"].tap();
+     checkIsMainMenu("Assets");
 
      //Wait for 3 seconds
      delay(3);     
@@ -160,13 +161,13 @@ test("Asset Register - Move To Level 1", function(target, app){
      // After reopening Asset Register, asset trees are collapsed. Only Level 1 assets are shown.
      
      // Verify asset number = Parent Asset is shown
-     assertTrue(window.scrollViews()[0].tableViews()[0].cells()["Parent Asset - Parent Asset"].isVisible(), "Asset = Parent Asset should be shown");
+     assertTrue(window.scrollViews()[0].tableViews()[0].cells()["Parent Asset - Parent Asset"].staticTexts()["Parent Asset - Parent Asset"].isVisible(), "Asset = Parent Asset should be shown");
      
      //Wait for 3 seconds
      delay(3);     
      
      // Verify asset number = Child Asset is shown
-     assertTrue(window.scrollViews()[0].tableViews()[0].cells()["Child Asset - Child Asset"].isVisible(), "Asset = Child Asset should be appeared")     
+     assertTrue(window.scrollViews()[0].tableViews()[0].cells()["Child Asset - Child Asset"].staticTexts()["Child Asset - Child Asset"].isVisible(), "Asset = Child Asset should be appeared")     
      
      //Wait for 3 seconds
      delay(3);     

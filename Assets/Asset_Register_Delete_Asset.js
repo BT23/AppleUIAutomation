@@ -22,8 +22,9 @@ test("Asset Register - Delete Asset", function(target, app){
      delay(3);
    
      // Select Asset = IT in Asset Selector
-     scrollToCellWithNameAndTap(window.scrollViews()[0].tableViews()[0], "IT - Information Technology");      
- 
+     //window.scrollViews()[0].tableViews()[0].cells()["IT - Information Technology"].staticTexts()["IT - Information Technology"].tap();      
+     selectAndTapAnAsset("IT - Information Technology");
+     
      // Wait for 3 seconds
      delay(3);    
      
@@ -46,8 +47,9 @@ test("Asset Register - Delete Asset", function(target, app){
      delay(3);     
   
      // Select Asset = Delete Me on Asset Tree
-     scrollToCellWithNameAndTap(window.scrollViews()[0].tableViews()[0], "Delete Me - Delete this asset");          
- 
+     //window.scrollViews()[0].tableViews()[0].cells()["Delete Me - Delete this asset"].staticTexts()["Delete Me - Delete this asset"].tap();          
+      selectAndTapAnAsset("Delete Me - Delete this asset");
+     
      //Wait for 3 seconds
      delay(3);     
 

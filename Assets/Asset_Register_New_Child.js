@@ -5,7 +5,8 @@ test("Asset Register - New Child", function(target, app){
      checkIsMainMenu("Assets");
      
      // Select Level 1 asset = IT
-     scrollToCellWithNameAndTap(window.scrollViews()[0].tableViews()[0], "IT - Information Technology");     
+     //scrollToCellWithNameAndTap(window.scrollViews()[0].tableViews()[0], "IT - Information Technology");
+     window.scrollViews()[0].tableViews()[0].cells()["IT - Information Technology"].staticTexts()["IT - Information Technology"].tap();
 
      // Wait for 3 seconds
      delay(3);     

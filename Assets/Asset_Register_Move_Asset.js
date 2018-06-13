@@ -40,8 +40,7 @@ test("Asset Register - Move Asset", function(target, app){
      delay(10);
 
      // Select Asset = IT in Asset Selector
-
-     scrollToCellWithNameAndTap(window.tableViews()[1], "IT - Information Technology");   
+     scrollToCellWithNameAndTap(window.tableViews()[1], "IT - Information Technology");
 
      // Wait for 10 seconds
      delay(10);
@@ -130,20 +129,22 @@ test("Asset Register - Move Asset", function(target, app){
      delay(3);
      
      // Reopen Asset Register
-     window.buttons()["Assets"].tap();     
-
+     //window.buttons()["Assets"].tap();     
+     checkIsMainMenu("Assets");
+     
      //Wait for 3 seconds
      delay(3);     
      
      // After reopening Asset Register, asset trees are collapsed. Only Level 1 assets are shown.
      
      // Verify asset number = Move Asset is shown
-     assertFalse(window.scrollViews()[0].tableViews()[0].cells()["Move Asset - Moving Asset"].isVisible(), "Asset = Move Asset should not be appeared");
+     assertFalse(window.scrollViews()[0].tableViews()[0].cells()["Move Asset - Moving Asset"].staticTexts()["Move Asset - Moving Asset"].isVisible(), "Asset = Move Asset should not be appeared");
      
      //Wait for 3 seconds
      delay(3);
      
-     scrollToCellWithNameAndTap(window.scrollViews()[0].tableViews()[0], "IT - Information Technology");
+     //scrollToCellWithNameAndTap(window.scrollViews()[0].tableViews()[0], "IT - Information Technology");
+     selectAndTapAnAsset("IT - Information Technology");
      
      // Wait for 3 seconds
      delay(3);     
@@ -155,14 +156,15 @@ test("Asset Register - Move Asset", function(target, app){
      delay(3);
      
      // If asset can be scrolled and tapped on, it means asset is created successfully
-     scrollToCellWithNameAndTap(window.scrollViews()[0].tableViews()[0], "IT - Information Technology");
-
+     //scrollToCellWithNameAndTap(window.scrollViews()[0].tableViews()[0], "IT - Information Technology");
+     selectAndTapAnAsset("Move Asset - Moving Asset");
+     
      // Wait for 3 seconds
      delay(3);     
      
      // Verify asset number = Move Asset is shown
-     assertTrue(window.scrollViews()[0].tableViews()[0].cells()["Move Asset - Moving Asset"].isVisible(), "Asset = Move Asset should be appeared");
-     
+     assertTrue(window.scrollViews()[0].tableViews()[0].cells()["Move Asset - Moving Asset"].staticTexts()["Move Asset - Moving Asset"].isVisible(), "Asset = Move Asset should be appeared");   
+
      // Wait for 3 seconds
      delay(3);
      

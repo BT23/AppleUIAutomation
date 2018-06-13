@@ -1,4 +1,4 @@
-//#import "../lib/tuneup.js"
+#import "../lib/tuneup.js"
 
 test("Asset Register - Rename Asset", function(target, app){
 
@@ -116,13 +116,13 @@ test("Asset Register - Rename Asset", function(target, app){
      delay(3);        
      
      // Verify asset number = Original Name does not exist
-     assertFalse(window.scrollViews()[0].tableViews()[0].cells()["Original Name - Original Asset Name"].isVisible(), "Asset = Original Name should not be shown");
+     assertFalse(window.scrollViews()[0].tableViews()[0].cells()["Original Name - Original Asset Name"].staticTexts()["Original Name - Original Asset Name"].isVisible(), "Asset = Original Name should not be shown");
      
      //Wait for 3 seconds
      delay(3);     
      
      // Verify inactive asset showing again
-     assertTrue(window.scrollViews()[0].tableViews()[0].cells()["Rename Asset - Original Asset Name"].isVisible(), "Asset = Rename Asset should be appeared");
+     assertTrue(window.scrollViews()[0].tableViews()[0].cells()["Rename Asset - Original Asset Name"].staticTexts()["Rename Asset - Original Asset Name"].isVisible(), "Asset = Rename Asset should be appeared");
      
      //Wait for 3 seconds
      delay(3);     

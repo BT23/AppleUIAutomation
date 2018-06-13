@@ -6,7 +6,8 @@ test("Asset Register Details - Duplicate Asset", function(target, app){
 
      checkIsMainMenu("Assets");
      
-     scrollToCellWithNameAndTap(window.scrollViews()[0].tableViews()[0], "IT - Information Technology");
+     //scrollToCellWithNameAndTap(window.scrollViews()[0].tableViews()[0], "IT - Information Technology");
+     selectAndTapAnAsset("IT - Information Technology");
      
      //Wait for 3 seconds
      delay(3);     

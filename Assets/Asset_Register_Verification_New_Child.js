@@ -1,10 +1,12 @@
 //#import "../lib/tuneup.js"
 
 test("Verify Asset Register - after creating a new child asset", function(target,app){
+     
      checkIsMainMenu("Assets");
      
      // If asset can be scrolled and tapped on, it means asset is created successfully
-     scrollToCellWithNameAndTap(window.scrollViews()[0].tableViews()[0], "IT - Information Technology");
+     //scrollToCellWithNameAndTap(window.scrollViews()[0].tableViews()[0], "IT - Information Technology");
+     window.scrollViews()[0].tableViews()[0].cells()["IT - Information Technology"].staticTexts()["IT - Information Technology"].tap();
 
      // Wait for 3 seconds
      delay(3);     
@@ -16,7 +18,8 @@ test("Verify Asset Register - after creating a new child asset", function(target
      delay(3);
      
      // If asset can be scrolled and tapped on, it means asset is created successfully
-     scrollToCellWithNameAndTap(window.scrollViews()[0].tableViews()[0], "Asset Child - Asset Register New Child");
+     //scrollToCellWithNameAndTap(window.scrollViews()[0].tableViews()[0], "Asset Child - Asset Register New Child");
+     window.scrollViews()[0].tableViews()[0].cells()["Asset Child - Asset Register New Child"].staticTexts()["Asset Child - Asset Register New Child"].tap();
      
      // Wait for 3 seconds
      delay(3);

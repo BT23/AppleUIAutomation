@@ -52,7 +52,8 @@ test("Asset Register - Create inactive asset - Verify asset is hidden", function
      delay(3);     
      
      // Open Asset Register
-     window.buttons()["Assets"].tap();
+     //window.buttons()["Assets"].tap();
+     checkIsMainMenu("Assets");
  
      //Wait for 3 seconds
      delay(3);      
@@ -70,7 +71,7 @@ test("Asset Register - Create inactive asset - Verify asset is hidden", function
      delay(3);     
      
      // Verify inactive asset showing again
-     assertTrue(window.scrollViews()[0].tableViews()[0].cells()["Inactive Asset - Asset is inactive"].isVisible(), "inactive asset should be shown");
+     assertTrue(window.scrollViews()[0].tableViews()[0].cells()["Inactive Asset - Asset is inactive"].staticTexts()["Inactive Asset - Asset is inactive"].isVisible(), "inactive asset should be shown");
      
      //Wait for 3 seconds
      delay(3);

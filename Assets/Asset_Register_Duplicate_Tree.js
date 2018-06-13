@@ -5,7 +5,8 @@ test("Asset Register - Duplicate Tree", function(target, app){
      checkIsMainMenu("Assets");
 
      // Select Asset = IT in Asset Selector
-     scrollToCellWithNameAndTap(window.scrollViews()[0].tableViews()[0], "IT - Information Technology");    
+     //scrollToCellWithNameAndTap(window.scrollViews()[0].tableViews()[0], "IT - Information Technology");    
+     selectAndTapAnAsset("IT - Information Technology");
      
      // Wait for 10 seconds
      delay(10);
@@ -59,24 +60,27 @@ test("Asset Register - Duplicate Tree", function(target, app){
      delay(3);
      
      // Reopen Asset Register
-     window.buttons()["Assets"].tap();     
+     //window.buttons()["Assets"].tap();     
+     checkIsMainMenu("Assets");
      
      //Wait for 3 seconds
      delay(3);
      
-     scrollToCellWithNameAndTap(window.scrollViews()[0].tableViews()[0], "IT Duplicated - Information Technology");
+     //scrollToCellWithNameAndTap(window.scrollViews()[0].tableViews()[0], "IT Duplicated - Information Technology");
+     selectAndTapAnAsset("IT - Information Technology");
      
      // Wait for 3 seconds
      delay(3);     
      
      // Expand asset tree by clicking on the arrow button
-     window.scrollViews()[0].tableViews()[0].cells()["IT Duplicated - Information Technology"].buttons()[0].tap();     
-     
+     window.scrollViews()[0].tableViews()[0].cells()["IT Duplicated - Information Technology"].buttons()[0].tap();
+
      // Wait for 3 seconds
      delay(3);
      
      // If asset can be scrolled and tapped on, it means child asset is copied over
-     scrollToCellWithNameAndTap(window.scrollViews()[0].tableViews()[0], "Phone - Phone");
+     //scrollToCellWithNameAndTap(window.scrollViews()[0].tableViews()[0], "Phone - Phone");
+     selectAndTapAnAsset("Phone - Phone");
      
      //Wait for 3 seconds
      delay(3);  
